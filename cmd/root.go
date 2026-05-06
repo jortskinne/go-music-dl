@@ -43,9 +43,10 @@ func init() {
 
 	// Persistent flags available to all subcommands
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default: $HOME/.go-music-dl.yaml)")
-	// Default output directory changed to ~/Music for convenience
-	rootCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "~/Music", "output directory for downloaded files")
-	rootCmd.PersistentFlags().StringVarP(&quality, "quality", "q", "flac", "preferred audio quality (mp3_128, mp3_320, flac, try)")
+	// Changed output default to ~/Downloads since that's where I prefer files to land
+	rootCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "~/Downloads", "output directory for downloaded files")
+	// Default to mp3_320 instead of flac — saves space and is good enough for my use
+	rootCmd.PersistentFlags().StringVarP(&quality, "quality", "q", "mp3_320", "preferred audio quality (mp3_128, mp3_320, flac, try)")
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "enable verbose logging")
 
 	// Bind flags to viper
