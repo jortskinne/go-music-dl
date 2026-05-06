@@ -40,8 +40,8 @@ func init() {
 	// Changed default output dir to ~/Music for convenience
 	rootCmd.PersistentFlags().StringP("output", "o", "~/Music", "Output directory for downloaded files")
 	rootCmd.PersistentFlags().BoolP("verbose", "v", false, "Enable verbose logging")
-	// Default to 128 kbps to save disk space for personal use
-	rootCmd.PersistentFlags().IntP("quality", "q", 128, "Audio quality in kbps (128, 192, 320)")
+	// Bumped default quality to 320 kbps — storage is cheap and I prefer lossless where possible
+	rootCmd.PersistentFlags().IntP("quality", "q", 320, "Audio quality in kbps (128, 192, 320)")
 }
 
 func main() {
