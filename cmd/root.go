@@ -43,7 +43,8 @@ func init() {
 
 	// Persistent flags available to all subcommands
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default: $HOME/.go-music-dl.yaml)")
-	rootCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", ".", "output directory for downloaded files")
+	// Default output directory changed to ~/Music for convenience
+	rootCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "~/Music", "output directory for downloaded files")
 	rootCmd.PersistentFlags().StringVarP(&quality, "quality", "q", "flac", "preferred audio quality (mp3_128, mp3_320, flac, try)")
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "enable verbose logging")
 
