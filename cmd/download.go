@@ -44,8 +44,10 @@ func init() {
 	downloadCmd.Flags().StringVarP(&outputDir, "output", "o", ".", "Output directory for downloaded files")
 	// Default to flac for best quality since I mostly use this for archiving
 	downloadCmd.Flags().StringVarP(&quality, "quality", "q", "flac", "Audio quality: 128, 192, 320, flac")
-	downloadCmd.Flags().StringVarP(&platform, "platform", "p", "netease", "Music platform to search on")
-	downloadCmd.Flags().BoolVar(&downloadLyrics, "lyrics", false, "Download lyrics file (.lrc) alongside the track")
+	// I primarily use qq music, so defaulting platform to qq instead of netease
+	downloadCmd.Flags().StringVarP(&platform, "platform", "p", "qq", "Music platform to search on")
+	// Default lyrics to true since I always want them for my music player
+	downloadCmd.Flags().BoolVar(&downloadLyrics, "lyrics", true, "Download lyrics file (.lrc) alongside the track")
 	downloadCmd.Flags().BoolVar(&downloadCover, "cover", false, "Download album cover image alongside the track")
 }
 
