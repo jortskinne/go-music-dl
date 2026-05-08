@@ -42,8 +42,8 @@ func init() {
 	rootCmd.PersistentFlags().BoolP("verbose", "v", false, "Enable verbose logging")
 	// Quality options: 128 (low), 192 (medium), 320 (high), 0 = lossless/flac where available
 	rootCmd.PersistentFlags().IntP("quality", "q", 320, "Audio quality in kbps (128, 192, 320, 0 for lossless)")
-	// Limit concurrent downloads to avoid getting rate-limited by platforms
-	rootCmd.PersistentFlags().IntP("concurrency", "c", 2, "Number of concurrent downloads")
+	// Increased concurrency to 5 — my connection handles it fine and it speeds up playlist downloads
+	rootCmd.PersistentFlags().IntP("concurrency", "c", 5, "Number of concurrent downloads")
 }
 
 func main() {
