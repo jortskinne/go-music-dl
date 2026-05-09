@@ -48,8 +48,8 @@ func init() {
 	downloadCmd.Flags().StringVarP(&platform, "platform", "p", "qq", "Music platform to search on")
 	// Default lyrics to true since I always want them for my music player
 	downloadCmd.Flags().BoolVar(&downloadLyrics, "lyrics", true, "Download lyrics file (.lrc) alongside the track")
-	// Also defaulting cover to true - useful for tagging files in my library
-	downloadCmd.Flags().BoolVar(&downloadCover, "cover", true, "Download album cover image alongside the track")
+	// Leaving cover off by default - I manage cover art separately with beets
+	downloadCmd.Flags().BoolVar(&downloadCover, "cover", false, "Download album cover image alongside the track")
 }
 
 func runDownload(cmd *cobra.Command, args []string) error {
